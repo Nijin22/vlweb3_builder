@@ -1,7 +1,8 @@
-FROM alpine:3.9
+FROM ubuntu:18.04
 
-RUN apk update
-RUN apk upgrade
+RUN apt-get update
+RUN apt-get upgrade --yes
 
-RUN apk add --no-cache bash grep git openjdk8 apache-ant npm
+RUN apt-get install --yes git openjdk-8-jdk-headless ant npm
 RUN npm install -g sass
+
